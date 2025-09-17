@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.title = `Detail - ${produk.nama}`;
         
         document.getElementById('breadcrumbs').innerHTML = `
-            <a href="home.html">Home</a> <i class="fas fa-angle-right"></i>
+            <a href="index.html">Home</a> <i class="fas fa-angle-right"></i>
             <a href="${produk.linkKategori}">${produk.kategori}</a> <i class="fas fa-angle-right"></i>
             <span>${produk.nama}</span>`;
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         // Handle jika produk tidak ditemukan
         document.querySelector('main .container').innerHTML = 
-            `<div style="text-align:center; padding: 50px 0;"><h1>Produk Tidak Ditemukan</h1><p>Maaf, produk yang Anda cari tidak ada. Silakan kembali ke <a href="home.html">halaman utama</a>.</p></div>`;
+            `<div style="text-align:center; padding: 50px 0;"><h1>Produk Tidak Ditemukan</h1><p>Maaf, produk yang Anda cari tidak ada. Silakan kembali ke <a href="index.html">halaman utama</a>.</p></div>`;
     }
 
 
