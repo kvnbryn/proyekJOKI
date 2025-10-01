@@ -5,6 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const productId = params.get('id');
     const produk = semuaProduk[productId];
 
+    // --- Variabel untuk Modal ---
+    const orderModal = document.getElementById('orderModal');
+    const orderBtn = document.getElementById('orderBtn');
+    const closeModalBtn = document.querySelector('.close-modal-btn');
+    const orderForm = document.getElementById('orderForm');
+
+
     if (produk) {
         // Mengisi semua elemen di halaman
         document.title = `Detail - ${produk.nama}`;
@@ -23,18 +30,59 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('productPrice').textContent = produk.harga;
         document.getElementById('productLongDesc').textContent = produk.deskripsiLengkap;
         
-        const whatsappMessage = `Halo, saya mau pesan ${produk.nama}`;
-        document.getElementById('whatsappBtn').href = `https://wa.me/6281224544541?text=${encodeURIComponent(whatsappMessage)}`;
-        
         const specTable = document.getElementById('specTable');
         specTable.innerHTML = '';
         for (const key in produk.spesifikasi) {
             const row = `<tr><th>${key}</th><td>${produk.spesifikasi[key]}</td></tr>`;
             specTable.innerHTML += row;
         }
-
+        
         // --- LOGIKA BARU: TAMPILKAN PRODUK SERUPA ---
         tampilkanProdukSerupa(produk.kategori, productId);
+
+        // --- EVENT LISTENERS UNTUK MODAL ---
+        orderBtn.addEventListener('click', () => {
+            orderModal.classList.add('show');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            orderModal.classList.remove('show');
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === orderModal) {
+                orderModal.classList.remove('show');
+            }
+        });
+
+        orderForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Ambil data dari form
+            const customerName = document.getElementById('customerName').value;
+            const customerAddress = document.getElementById('customerAddress').value;
+            const quantity = document.getElementById('quantity').value;
+
+            // Buat pesan WhatsApp
+            const message = `Halo, saya mau pesan produk berikut:
+-----------------------------------
+*Produk:* ${produk.nama}
+*Harga:* ${produk.harga}
+*Jumlah:* ${quantity}
+-----------------------------------
+*Nama Pemesan:* ${customerName}
+*Alamat Pengiriman:* ${customerAddress}
+
+Mohon konfirmasi ketersediaan dan total biayanya. Terima kasih!`;
+
+            // Redirect ke WhatsApp
+            const whatsappURL = `https://wa.me/6281224544541?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+            
+            // Tutup modal setelah submit
+            orderModal.classList.remove('show');
+        });
+
 
     } else {
         // Handle jika produk tidak ditemukan
@@ -63,12 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function tampilkanProdukSerupa(kategori, idProdukSaatIni) {
         const container = document.getElementById('relatedProductsContainer');
         
-        // Filter produk berdasarkan kategori yang sama, dan bukan produk yang sedang dilihat
         const produkSerupa = Object.keys(semuaProduk)
             .filter(key => semuaProduk[key].kategori === kategori && key !== idProdukSaatIni)
-            .map(key => ({ id: key, ...semuaProduk[key] })); // Ubah objek jadi array of objects
+            .map(key => ({ id: key, ...semuaProduk[key] })); 
 
-        // Batasi hanya 3 produk serupa
         const produkTampil = produkSerupa.slice(0, 3);
 
         if (produkTampil.length === 0) {

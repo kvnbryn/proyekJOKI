@@ -32,6 +32,37 @@ const semuaProduk = {
             "Berat": "0.96 kg"
         }
     },
+    "jbl-go-3": {
+        nama: "JBL Go 3",
+        kategori: "JBL",
+        linkKategori: "JBL.html",
+        harga: "Rp 599.000",
+        gambar: "assets/images/JBLGO3.jpg",
+        deskripsiSingkat: "Speaker mini ultra-portabel dengan desain stylish, suara powerful, tahan air dan debu.",
+        deskripsiLengkap: "Desain ultra-portabel JBL Go 3 sangat cocok dengan gaya terkini. Kain warna-warni dan detail ekspresif membuatnya terlihat sekeren suaranya. Tahan air dan debu dengan sertifikasi IP67 sehingga Anda bisa terus mendengarkan di saat hujan maupun panas.",
+        spesifikasi: {
+            "Daya Tahan Baterai": "Hingga 5 jam",
+            "Sertifikasi": "Tahan air & debu IP67",
+            "Konektivitas": "Bluetooth® 5.1",
+            "Berat": "0.21 kg"
+        }
+    },
+    "jbl-partybox-encore": {
+        nama: "JBL PartyBox Encore",
+        kategori: "JBL",
+        linkKategori: "JBL.html",
+        harga: "Rp 4.400.000",
+        gambar: "assets/images/JBLPBENCORE.jpg", // <-- SIAPKAN GAMBAR INI
+        deskripsiSingkat: "Speaker pesta portabel dengan 100W RMS, lightshow dinamis, dan termasuk mikrofon wireless.",
+        deskripsiLengkap: "JBL PartyBox Encore adalah speaker pesta portabel yang memberikan 10 jam nonstop keseruan. Dengan pegangan yang mudah digenggam dan desain tahan percikan, Anda selalu dapat membawa pesta. Nikmati ketukan dengan Suara JBL Original Pro yang menakjubkan dan bass yang dalam. Sinkronkan pertunjukan cahaya strobo, ring, dan klub untuk pengalaman yang imersif, atau bernyanyi bersama dengan mikrofon nirkabel digital premium dari JBL.",
+        spesifikasi: {
+            "Power Output": "100W RMS",
+            "Daya Tahan Baterai": "Hingga 10 jam",
+            "Fitur": "Dynamic Lightshow, 1x Mic Wireless, Tahan Percikan (IPX4)",
+            "Konektivitas": "Bluetooth, USB, AUX",
+            "Berat": "6.3 kg"
+        }
+    },
     "sony-srs-xb13": {
         nama: "Sony SRS-XB13",
         kategori: "Sony",
@@ -48,20 +79,20 @@ const semuaProduk = {
             "Port": "USB Type-C®"
         }
     },
-    // --- TAMBAHKAN PRODUK LAIN DI SINI DENGAN FORMAT YANG SAMA ---
-    "jbl-go-3": {
-        nama: "JBL Go 3",
-        kategori: "JBL",
-        linkKategori: "JBL.html",
-        harga: "Rp 599.000",
-        gambar: "assets/images/JBLGO3.jpg",
-        deskripsiSingkat: "Speaker mini ultra-portabel dengan desain stylish, suara powerful, tahan air dan debu.",
-        deskripsiLengkap: "Desain ultra-portabel JBL Go 3 sangat cocok dengan gaya terkini. Kain warna-warni dan detail ekspresif membuatnya terlihat sekeren suaranya. Tahan air dan debu dengan sertifikasi IP67 sehingga Anda bisa terus mendengarkan di saat hujan maupun panas.",
+    "sony-srs-xg300": {
+        nama: "Sony SRS-XG300",
+        kategori: "Sony",
+        linkKategori: "sony.html",
+        harga: "Rp 4.299.000",
+        gambar: "assets/images/SONYXG300.jpg", // <-- SIAPKAN GAMBAR INI
+        deskripsiSingkat: "Speaker nirkabel portabel dengan suara bass bertenaga, lampu ambient, dan baterai 25 jam.",
+        deskripsiLengkap: "Bawa pesta ke mana saja dengan speaker nirkabel portabel SRS-XG300. Dengan suara pesta yang kuat dari X-Balanced Speaker, tweeter efisiensi tinggi, dan radiator pasif, speaker ini dibuat untuk menghasilkan suara bass yang dalam dan jernih. Gagang yang dapat ditarik membuatnya mudah dibawa, dan dengan daya tahan baterai 25 jam serta ketahanan air dan debu IP67, Anda dapat berpesta dari siang hingga malam.",
         spesifikasi: {
-            "Daya Tahan Baterai": "Hingga 5 jam",
-            "Sertifikasi": "Tahan air & debu IP67",
-            "Konektivitas": "Bluetooth® 5.1",
-            "Berat": "0.21 kg"
+            "Fitur": "X-Balanced Speaker, Ambient Illumination",
+            "Daya Tahan Baterai": "Hingga 25 jam",
+            "Ketahanan": "Tahan air dan debu (IP67)",
+            "Konektivitas": "Bluetooth®, Party Connect",
+            "Fitur Tambahan": "Gagang dapat ditarik"
         }
     },
     "polytron-pas-8e12": {
@@ -77,6 +108,22 @@ const semuaProduk = {
             "Konektivitas": "Bluetooth, USB, Aux In",
             "Fitur": "XBR Woofer, Super Bass",
             "Power Output": "2 x 100 Watt RMS"
+        }
+    },
+    "polytron-pma-9506": {
+        nama: "Polytron PMA 9506",
+        kategori: "Polytron",
+        linkKategori: "polytron.html",
+        harga: "Rp 990.000",
+        gambar: "assets/images/POLYTRONPMA9506.jpg", // <-- SIAPKAN GAMBAR INI
+        deskripsiSingkat: "Speaker multimedia 2.1 channel dengan lampu ambient, Bluetooth, dan remote control.",
+        deskripsiLengkap: "Polytron Multimedia Audio seri PMA 9506 adalah pilihan sempurna untuk home entertainment. Dengan teknologi Bazzoke (ekstra bass) yang tertanam di dalamnya, Anda akan menikmati suara bass yang solid. Dilengkapi dengan lampu ambient, koneksi Bluetooth, dan remote control untuk kemudahan pengoperasian dari jarak jauh.",
+        spesifikasi: {
+            "Tipe Speaker": "Multimedia Speaker 2.1 Channel",
+            "Konektivitas": "Bluetooth, USB, SD Card/MMC, Aux In",
+            "Fitur": "Bazzoke, Ambient Light, FM Radio",
+            "Power Output": "80 Watt RMS",
+            "Aksesori": "Remote Control"
         }
     },
     "wilson-audio-sabrinax": {
